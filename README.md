@@ -149,3 +149,20 @@ function ContactForm() {
     </form>
   );
 }
+
+
+
+test unitarios Jest
+```bash
+Watch Usage: Press w to show more.
+PASS  src/pages/Products.test.jsx (8.132 s)
+PASS  src/pages/Contact.test.jsx (8.179 s)
+
+Test Suites: 2 passed, 2 total
+Tests:       7 passed, 7 total
+Snapshots:   0 total
+Time:        20.491 s
+Ran all test suites.
+
+Watch Usage: Press w to show more.
+```
