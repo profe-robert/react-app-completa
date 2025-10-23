@@ -11,6 +11,7 @@ El objetivo es desarrollar una **interfaz dinámica** con manejo de rutas, formu
    ```bash
    git clone https://github.com/profe-robert/react-app-completa
    cd react-app-completa
+   ```
 
 Instalar dependencias:
 npm install
@@ -41,12 +42,14 @@ npm run build
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
     }
+    ```
 
 🧪 devDependencies
-   ```bash
-   {
-      "@testing-library/react": "^16.3.0"
-   }
+    ```bash
+    {
+       "@testing-library/react": "^16.3.0"
+    }
+    ```
 
 🧩 Estructura recomendada del proyecto
     ```bash
@@ -78,6 +81,7 @@ npm run build
     ├─ logo.svg
     ├─ reportWebVitals.js
     └─ setupTests.js
+    ```
 
 🧰 Scripts principales
 Comando	        Descripción
