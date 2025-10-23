@@ -43,10 +43,10 @@ npm run build
     }
 
 🧪 devDependencies
-    ```bash
-    {
-    "@testing-library/react": "^16.3.0"
-    }
+   ```bash
+   {
+      "@testing-library/react": "^16.3.0"
+   }
 
 🧩 Estructura recomendada del proyecto
     ```bash
