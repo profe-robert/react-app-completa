@@ -95,7 +95,7 @@ El proyecto usa Jest + React Testing Library.
 Archivos de prueba terminan en .test.jsx.
 
 Ejemplo de test simple:
-
+```bash
 import { render, screen } from '@testing-library/react';
 import Contact from './Contact';
 
@@ -104,15 +104,17 @@ test('se monta correctamente y muestra el título', () => {
   const titulo = screen.getByRole('heading', { name: /contacto/i });
   expect(titulo).toBeInTheDocument();
 });
+```
 
 🎨 Estilos
 El proyecto usa Bootstrap 5 y React Bootstrap para componentes visuales.
+```bash
 Importa Bootstrap en src/index.js:
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+```
 🧩 Navegación con React Router
 Ejemplo básico de rutas:
-
+```bash
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Products from './pages/Products/Products';
@@ -131,9 +133,10 @@ function App() {
 }
 
 export default App;
+```
 🧩 Formulario con React Hook Form
 Ejemplo de uso en un componente:
-
+```bash
 import { useForm } from 'react-hook-form';
 
 function ContactForm() {
@@ -149,7 +152,7 @@ function ContactForm() {
     </form>
   );
 }
-
+```
 
 
 test unitarios Jest
