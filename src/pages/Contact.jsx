@@ -27,19 +27,23 @@ function Contact(){
             <h2>Contacto</h2>
             {msg && <Alert variant="success">{msg}</Alert>}
             {errors.length > 0 && <Alert variant="danger">{errors.join('. ')}</Alert>}
+
             <Form onSubmit={onSubmit} noValidate>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" controlId="name">
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control name="name" required />
             </Form.Group>
-            <Form.Group className="mb-3">
+
+            <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Correo</Form.Label>
                 <Form.Control type="email" name="email" required />
             </Form.Group>
-            <Form.Group className="mb-3">
+
+            <Form.Group className="mb-3" controlId="message">
                 <Form.Label>Mensaje</Form.Label>
                 <Form.Control as="textarea" rows={4} name="message" required />
             </Form.Group>
+
             <Button type="submit">Enviar</Button>
             </Form>
         </Container>
