@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# 🧩 Proyecto React – Tienda Fullstack (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue generado con **Create React App (CRA)** y utiliza **React 19**, **React Bootstrap**, y **React Router 7** para construir una aplicación web moderna, modular y testeable.  
+El objetivo es desarrollar una **interfaz dinámica** con manejo de rutas, formularios y pruebas automatizadas con **Testing Library**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Instalación
 
-### `npm start`
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/profe-robert/react-app-completa
+   cd react-app-completa
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instalar dependencias:
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Ejecutar el entorno de desarrollo:
+npm start
 
-### `npm test`
+Ejecutar los tests:
+npm test
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Construir el proyecto para producción:
+npm run build
 
-### `npm run build`
+🧠 Dependencias del proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📦 dependencies
+{
+  "@testing-library/dom": "^10.4.1",
+  "@testing-library/jest-dom": "^6.9.1",
+  "@testing-library/user-event": "^13.5.0",
+  "bootstrap": "^5.3.8",
+  "react": "^19.2.0",
+  "react-bootstrap": "^2.10.10",
+  "react-dom": "^19.2.0",
+  "react-hook-form": "^7.64.0",
+  "react-router-dom": "^7.9.4",
+  "react-scripts": "5.0.1",
+  "web-vitals": "^2.1.4"
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🧪 devDependencies
+{
+  "@testing-library/react": "^16.3.0"
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🧩 Estructura recomendada del proyecto
+src/
+├─ app/
+│  └─ routes.js
+│
+├─ components/
+│  ├─ NavBar.jsx
+│  └─ products/                # (carpeta para componentes de productos)
+│
+├─ context/
+│  └─ AppContext.js
+│
+├─ data/
+│  └─ gaming.mock.js
+│
+├─ pages/
+│  ├─ Contact.jsx
+│  ├─ Contact.test.jsx
+│  ├─ Home.jsx
+│  ├─ Products.jsx
+│  └─ Products.test.jsx
+│
+├─ App.css
+├─ App.js
+├─ index.css
+├─ index.js
+├─ logo.svg
+├─ reportWebVitals.js
+└─ setupTests.js
 
-### `npm run eject`
+🧰 Scripts principales
+Comando	        Descripción
+npm start	    Ejecuta el servidor de desarrollo en http://localhost:3000/.
+npm test	    Ejecuta los tests de Jest + Testing Library.
+npm run build	Genera una versión optimizada para producción.
+npm run eject	Expone la configuración interna de CRA (no recomendado).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🧪 Pruebas Automatizadas
+El proyecto usa Jest + React Testing Library.
+Archivos de prueba terminan en .test.jsx.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ejemplo de test simple:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+jsx
+Copiar código
+import { render, screen } from '@testing-library/react';
+import Contact from './Contact';
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+test('se monta correctamente y muestra el título', () => {
+  render(<Contact />);
+  const titulo = screen.getByRole('heading', { name: /contacto/i });
+  expect(titulo).toBeInTheDocument();
+});
 
-## Learn More
+🎨 Estilos
+El proyecto usa Bootstrap 5 y React Bootstrap para componentes visuales.
+Importa Bootstrap en src/index.js:
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🧩 Navegación con React Router
+Ejemplo básico de rutas:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Products from './pages/Products/Products';
+import Contact from './pages/Contact/Contact';
 
-### Code Splitting
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/productos" element={<Products />} />
+        <Route path="/contacto" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default App;
+🧩 Formulario con React Hook Form
+Ejemplo de uso en un componente:
 
-### Analyzing the Bundle Size
+import { useForm } from 'react-hook-form';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+function ContactForm() {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register('nombre')} placeholder="Nombre" />
+      <input {...register('correo')} placeholder="Correo" />
+      <textarea {...register('mensaje')} placeholder="Mensaje" />
+      <button type="submit">Enviar</button>
+    </form>
+  );
+}
