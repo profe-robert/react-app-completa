@@ -1,9 +1,9 @@
 import { Navbar, Container, Nav, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useApp } from '../context/AppContext';
+import { useCart } from '../context/AppContext';
 
 function NavBar(){
-    const { cartCount } = useApp();
+    const { cartCount } = useCart();
     return (
         <Navbar bg="light" expand="md" className="mb-3 border-bottom">
         <Container>

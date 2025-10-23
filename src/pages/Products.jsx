@@ -1,36 +1,35 @@
-import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import { useApp } from '../context/AppContext';
+import { useMemo, useState } from 'react';
+import { Container } from 'react-bootstrap';
+import { useCart } from '../context/AppContext';
+import { GAMING_PRODUCTS, CATEGORIES } from '../data/gaming.mock';
+import Filters from '../components/products/Filters';
+import ProductGrid from '../components/products/ProductGrid';
 
-const products = [
-    { id: 1, name: 'Producto A', price: 4990 },
-    { id: 2, name: 'Producto B', price: 7990 },
-    { id: 3, name: 'Producto C', price: 12990 }
-];
+export default function Products() {
+    const { addToCart } = useCart();
+    const [filter, setFilter] = useState('all');
 
-function Products(){
-    const { addToCart } = useApp();
+    const list = useMemo(() => {
+        return filter === 'all'
+        ? GAMING_PRODUCTS
+        : GAMING_PRODUCTS.filter(p => p.category === filter);
+    }, [filter]);
+
     return (
         <main>
         <Container>
-            <h2>Productos</h2>
-            <Row xs={1} sm={2} lg={3} className="g-3">
-            {products.map(p => (
-                <Col key={p.id}>
-                <Card className="h-100">
-                    <Card.Body>
-                    <Card.Title>{p.name}</Card.Title>
-                    <Card.Text className="text-muted">
-                        ${p.price.toLocaleString('es-CL')}
-                    </Card.Text>
-                    <Button onClick={addToCart}>Agregar</Button>
-                    </Card.Body>
-                </Card>
-                </Col>
-            ))}
-            </Row>
+            <h2 className="mb-2">Gaming Store</h2>
+            <p className="text-muted mb-3">Consolas, periféricos y accesorios</p>
+
+            <Filters
+            current={filter}
+            onChange={setFilter}
+            options={CATEGORIES}
+            total={GAMING_PRODUCTS.length}
+            />
+
+            <ProductGrid items={list} onAdd={addToCart} />
         </Container>
         </main>
     );
 }
-
-export default Products;
