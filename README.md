@@ -8,10 +8,10 @@ El objetivo es desarrollar una **interfaz dinámica** con manejo de rutas, formu
 ## 🚀 Instalación
 
 1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/profe-robert/react-app-completa
-   cd react-app-completa
-   ```
+```bash
+git clone https://github.com/profe-robert/react-app-completa
+cd react-app-completa
+```
 
 Instalar dependencias:
 npm install
@@ -28,60 +28,60 @@ npm run build
 🧠 Dependencias del proyecto
 
 📦 dependencies
-    ```bash
-    {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.8",
-    "react": "^19.2.0",
-    "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.2.0",
-    "react-hook-form": "^7.64.0",
-    "react-router-dom": "^7.9.4",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-    }
-    ```
+ ```bash
+ {
+ "@testing-library/dom": "^10.4.1",
+ "@testing-library/jest-dom": "^6.9.1",
+ "@testing-library/user-event": "^13.5.0",
+ "bootstrap": "^5.3.8",
+ "react": "^19.2.0",
+ "react-bootstrap": "^2.10.10",
+ "react-dom": "^19.2.0",
+ "react-hook-form": "^7.64.0",
+ "react-router-dom": "^7.9.4",
+ "react-scripts": "5.0.1",
+ "web-vitals": "^2.1.4"
+ }
+ ```
 
 🧪 devDependencies
-    ```bash
-    {
-       "@testing-library/react": "^16.3.0"
-    }
-    ```
+ ```bash
+ {
+    "@testing-library/react": "^16.3.0"
+ }
+ ```
 
 🧩 Estructura recomendada del proyecto
-    ```bash
-    src/
-    ├─ app/
-    │  └─ routes.js
-    │
-    ├─ components/
-    │  ├─ NavBar.jsx
-    │  └─ products/                # (carpeta para componentes de productos)
-    │
-    ├─ context/
-    │  └─ AppContext.js
-    │
-    ├─ data/
-    │  └─ gaming.mock.js
-    │
-    ├─ pages/
-    │  ├─ Contact.jsx
-    │  ├─ Contact.test.jsx
-    │  ├─ Home.jsx
-    │  ├─ Products.jsx
-    │  └─ Products.test.jsx
-    │
-    ├─ App.css
-    ├─ App.js
-    ├─ index.css
-    ├─ index.js
-    ├─ logo.svg
-    ├─ reportWebVitals.js
-    └─ setupTests.js
-    ```
+ ```bash 
+ src/
+ ├─ app/
+ │  └─ routes.js
+ │
+ ├─ components/
+ │  ├─ NavBar.jsx
+ │  └─ products/                # (carpeta para componentes de productos)
+ │
+ ├─ context/
+ │  └─ AppContext.js
+ │
+ ├─ data/
+ │  └─ gaming.mock.js
+ │
+ ├─ pages/
+ │  ├─ Contact.jsx
+ │  ├─ Contact.test.jsx
+ │  ├─ Home.jsx
+ │  ├─ Products.jsx
+ │  └─ Products.test.jsx
+ │
+ ├─ App.css
+ ├─ App.js
+ ├─ index.css
+ ├─ index.js
+ ├─ logo.svg
+ ├─ reportWebVitals.js
+ └─ setupTests.js
+ ``` 
 
 🧰 Scripts principales
 Comando	        Descripción
